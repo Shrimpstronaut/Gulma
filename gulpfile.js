@@ -1,56 +1,50 @@
 var gulp = require('gulp');
+var sass = require('gulp-sass');
+var browserSync = require('browser-sync').create();
 
-// gulp plugins and utils
-var gutil = require('gulp-util');
+// utils
 var livereload = require('gulp-livereload');
-var postcss = require('gulp-postcss');
-var sourcemaps = require('gulp-sourcemaps');
 var zip = require('gulp-zip');
-
-// postcss plugins
-var autoprefixer = require('autoprefixer');
-var colorFunction = require('postcss-color-function');
-var cssnano = require('cssnano');
-var customProperties = require('postcss-custom-properties');
-var easyimport = require('postcss-easy-import');
-
-var swallowError = function swallowError(error) {
-    gutil.log(error.toString());
-    gutil.beep();
-    this.emit('end');
-};
 
 var nodemonServerInit = function () {
     livereload.listen(1234);
 };
 
-gulp.task('build', ['css'], function (/* cb */) {
+gulp.task('build', ['sass'], function (/* cb */) {
     return nodemonServerInit();
 });
 
-gulp.task('css', function () {
-    var processors = [
-        easyimport,
-        customProperties,
-        colorFunction(),
-        autoprefixer({browsers: ['last 2 versions']}),
-        cssnano()
-    ];
-
-    return gulp.src('assets/css/*.css')
-        .on('error', swallowError)
-        .pipe(sourcemaps.init())
-        .pipe(postcss(processors))
-        .pipe(sourcemaps.write('.'))
+// Compile sass into CSS & auto-inject into browsers
+gulp.task('sass', function() {
+    return gulp.src(['node_modules/bulma/bulma.sass', 'assets/sass/*.sass'])
+        .pipe(sass())
         .pipe(gulp.dest('assets/built/'))
-        .pipe(livereload());
+        .pipe(browserSync.stream());
 });
+
+// gulp.task('css', function () {
+//     var processors = [
+//         easyimport,
+//         customProperties,
+//         colorFunction(),
+//         autoprefixer({browsers: ['last 2 versions']}),
+//         cssnano()
+//     ];
+//
+//     return gulp.src('assets/css/*.css')
+//         .on('error', swallowError)
+//         .pipe(sourcemaps.init())
+//         .pipe(postcss(processors))
+//         .pipe(sourcemaps.write('.'))
+//         .pipe(gulp.dest('assets/built/'))
+//         .pipe(livereload());
+// });
 
 gulp.task('watch', function () {
-    gulp.watch('assets/css/**', ['css']);
+    gulp.watch('assets/sass/**', ['sass']);
 });
 
-gulp.task('zip', ['css'], function () {
+gulp.task('zip', ['sass'], function () {
     var targetDir = 'dist/';
     var themeName = require('./package.json').name;
     var filename = themeName + '.zip';

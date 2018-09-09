@@ -3,34 +3,40 @@
 into the {body} of the default.hbs template --}}
 
 {{!-- The big featured header, it uses blog cover image as a BG if available --}}
-<header class="site-header outer {{#if @blog.cover_image}}" style="background-image: url({{@blog.cover_image}}){{else}}no-cover{{/if}}">
-    <div class="inner">
-        <div class="site-header-content">
-            <h1 class="site-title">
-                {{#if @blog.logo}}
-                    <img class="site-logo" src="{{@blog.logo}}" alt="{{@blog.title}}" />
-                {{else}}
-                    {{@blog.title}}
-                {{/if}}
-            </h1>
-            <h2 class="site-description">{{@blog.description}}</h2>
-        </div>
-        {{> "site-nav"}}
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="{{@blog.url}}" width="112" height="28">{{@blog.title}}</a>
+
+        <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
     </div>
-</header>
+    {{> "site-nav"}}
+</nav>
+<section class="hero is-medium is-primary is-bold" {{#if @blog.cover_image}}
+         style="background-image: url({{@blog.cover_image}})" {{/if}}>
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                {{@blog.title}}
+            </h1>
+            <h2 class="subtitle">
+                {{@blog.description}}
+            </h2>
+        </div>
+    </div>
+</section>
 
 {{!-- The main content area --}}
-<main id="site-main" class="site-main outer">
-    <div class="inner">
-
-        <div class="post-feed">
-            {{#foreach posts}}
-
+<section class="container">
+    <div class="post-feed columns is-multiline">
+        {{#foreach posts}}
+            <!--<div class="column is-half-desktop">-->
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
                 {{> "post-card"}}
-
-            {{/foreach}}
-        </div>
-
+            <!--</div>-->
+        {{/foreach}}
     </div>
-</main>
+</section>

@@ -1,42 +1,52 @@
-<article class="post-card {{post_class}}{{#unless feature_image}} no-image{{/unless}}">
+<article class="card {{post_class}}{{#unless feature_image}} no-image{{/unless}}">
     {{#if feature_image}}
-        <a class="post-card-image-link" href="{{url}}">
-            <div class="post-card-image" style="background-image: url({{feature_image}})"></div>
-        </a>
-    {{/if}}
-    <div class="post-card-content">
-        <a class="post-card-content-link" href="{{url}}">
-            <header class="post-card-header">
+        <a class="card-image" href="{{url}}">
+            <figure class="image">
                 {{#if primary_tag}}
-                    <span class="post-card-tags">{{primary_tag.name}}</span>
+                    <a class="tag is-primary image-tag-overlay" href="{{primary_tag.name}}">{{primary_tag.name}}</a>
                 {{/if}}
-                <h2 class="post-card-title">{{title}}</h2>
-            </header>
-            <section class="post-card-excerpt">
-                <p>{{excerpt words="33"}}</p>
-            </section>
+                <img src="{{feature_image}}" alt="Placeholder image">
+            </figure>
         </a>
-        <footer class="post-card-meta">
+    {{else}}
+        <div class="card-image">
+            <figure class="image">
+                {{#if primary_tag}}
+                    <a class="tag is-primary image-tag" href="{{primary_tag.name}}">{{primary_tag.name}}</a>
+                {{/if}}
+            </figure>
+        </div>
+    {{/if}}
 
-            <ul class="author-list">
-            {{#foreach authors}}
-                <li class="author-list-item">
-
-                    <div class="author-name-tooltip">
-                        {{name}}
+    <div class="card-content">
+        <div class="media">
+            <div class="media-content">
+                <p class="title is-4">
+                    {{title}}
+                </p>
+                {{#foreach authors}}
+                    <div class="control">
+                        <div class="tags has-addons">
+                            <span class="tag is-dark">Author</span>
+                            <span class="tag is-primary">{{name}}</span>
+                        </div>
                     </div>
+                {{/foreach}}
+            </div>
+        </div>
 
-                    {{#if profile_image}}
-                        <a href="{{url}}" class="static-avatar"><img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" /></a>
-                    {{else}}
-                        <a href="{{url}}" class="static-avatar author-profile-image">{{> "icons/avatar"}}</a>
-                    {{/if}}
-                </li>
-            {{/foreach}}
-            </ul>
-
-            <span class="reading-time">{{reading_time}}</span>
-
-        </footer>
+        <div class="content">
+            {{excerpt words="33"}}
+            <hr>
+            {{#if tags}}
+                <ul>
+                    {{#foreach tags}}
+                        <a class="tag" href="{{url}}">{{name}}</a>
+                    {{/foreach}}
+                </ul>
+            {{/if}}
+            <br>
+            <small>{{reading_time}}</small>
+        </div>
     </div>
 </article>

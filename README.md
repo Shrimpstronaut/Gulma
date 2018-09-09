@@ -2,6 +2,8 @@
 
 A custom theme for [Ghost](http://github.com/tryghost/ghost/) based on the popular [open source CSS framework Bulma](https://bulma.io/).
 
+![](screenshot_desktop.png)
+
 # Development
 
 Styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need Node and Gulp installed globally. After that, from the theme's root directory:

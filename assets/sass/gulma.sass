@@ -1,0 +1,67 @@
+.navbar-item .icon
+  margin-right: 5px
+  margin-top: 5px
+
+// TODO figure out why the burger menu isn´t white by default
+a.navbar-burger
+  color: #fff
+
+section.hero
+  margin-bottom: 20px
+
+.image-tag
+  margin-left: 12px
+  margin-top: 12px
+
+.image-tag-overlay
+  position: absolute
+  top: 12px
+  left: 12px
+
+div.post-feed
+  position: relative
+  display: flex
+  flex-wrap: wrap
+  margin: 0 -20px
+  padding: 40px 0 0 0
+
+.post
+  flex: 1 1 300px
+  display: flex
+  flex-direction: column
+  overflow: hidden
+  margin: 0 20px 40px
+  min-height: 300px
+  transition: all 0.5s ease
+
+article.card:nth-child(6n+1):not(.no-image)
+  flex: 1 1 100%
+  flex-direction: row
+
+article.card:nth-child(6n+1):not(.no-image) -image-link
+  position: relative
+  flex: 1 1 auto
+  border-radius: 5px 0 0 5px
+
+article.card:nth-child(6n+1):not(.no-image) -image
+  position: absolute
+  width: 100%
+  height: 100%
+
+article.card:nth-child(6n+1):not(.no-image) -content
+  flex: 0 1 357px
+
+article.card:nth-child(6n+1):not(.no-image) h2
+  font-size: 2.6rem
+
+article.card:nth-child(6n+1):not(.no-image) p
+  font-size: 1.8rem
+  line-height: 1.55em
+
+article.card:nth-child(6n+1):not(.no-image) -content-link
+  padding: 30px 40px 0
+
+article.card:nth-child(6n+1):not(.no-image) -meta
+  padding: 0 40px 30px
+
+

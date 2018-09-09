@@ -1,8 +1,8 @@
-<nav class="site-nav">
-    <div class="site-nav-left">
+<div class="navbar-menu" id="navMenu">
+    <div class="navbar-start">
         {{^is "home"}}
             {{#if @blog.logo}}
-                <a class="site-nav-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
+                <a class="site-nav-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}"/></a>
             {{else}}
                 <a class="site-nav-logo" href="{{@blog.url}}">{{@blog.title}}</a>
             {{/if}}
@@ -11,19 +11,31 @@
             {{navigation}}
         {{/if}}
     </div>
-    <div class="site-nav-right">
-        <div class="social-links">
-            {{#if @blog.facebook}}
-                <a class="social-link social-link-fb" href="{{facebook_url @blog.facebook}}" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
-            {{/if}}
-            {{#if @blog.twitter}}
-                <a class="social-link social-link-tw" href="{{twitter_url @blog.twitter}}" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
-            {{/if}}
-        </div>
-        {{#if @labs.subscribers}}
-            <a class="subscribe-button" href="#subscribe">Subscribe</a>
-        {{else}}
-            <a class="rss-button" href="https://feedly.com/i/subscription/feed/{{@blog.url}}/rss/" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
+
+    <div class="navbar-end">
+        {{#if @blog.facebook}}
+            <a class="navbar-item" href="{{facebook_url @blog.facebook}}" target="_blank" rel="noopener">
+                <i class="icon fab fa-facebook-square"></i>
+                <span>{{@blog.twitter}}</span>
+            </a>
         {{/if}}
+        {{#if @blog.twitter}}
+            <a class="navbar-item" href="{{twitter_url @blog.twitter}}" target="_blank" rel="noopener">
+                <i class="icon fab fa-twitter-square"></i>
+                <span>{{@blog.twitter}}</span>
+            </a>
+        {{/if}}
+        {{#if @labs.subscribers}}
+            <a class="navbar-item" href="#subscribe">
+                <i class="icon fas fa-rss-square"></i>
+                <span>RSS</span>
+            </a>
+        {{else}}
+            <a class="navbar-item" href="https://feedly.com/i/subscription/feed/{{@blog.url}}/rss/" target="_blank">
+                <i class="icon fas fa-rss-square"></i>
+                <span>Feedly</span>
+            </a>
+        {{/if}}
+
     </div>
-</nav>
+</div>

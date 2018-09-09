@@ -1,63 +1,62 @@
 {
-    "name": "gulma",
-    "description": "Bulma theme for the Ghost blogging platform. Beautiful, minimal and responsive.",
-    "demo": "https://github.com/simply-fiete/Gulma",
-    "version": "1.0.0",
-    "engines": {
-        "ghost": ">=2.0.0"
-    },
-    "license": "MIT",
-    "screenshots": {
-    },
-    "scripts": {
-        "dev": "gulp",
-        "zip": "gulp zip",
-        "test": "gscan ."
-    },
-    "author": {
-        "name": "Stefan Fiedler",
-        "email": "todo@test.tld",
-        "url": "https://github.com/simply-fiete"
-    },
-    "gpm": {
-        "type": "theme",
-        "categories": [
-            "Minimal",
-            "Magazine",
-            "Blog",
-            "Bulma",
-            "CSS",
-            "Framework"
-        ]
-    },
-    "keywords": [
-        "ghost",
-        "theme",
-        "ghost-theme",
-        "bulma"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/simply-fiete/Gulma.git"
-    },
-    "bugs": "https://github.com/simply-fiete/Gulma/issues",
-    "contributors": ["https://github.com/simply-fiete/Gulma/graphs/contributors"],
-    "devDependencies": {
-        "autoprefixer": "6.3.6",
-        "cssnano": "3.7.1",
-        "gscan": "^2.0.0",
-        "gulp": "3.9.1",
-        "gulp-livereload": "3.8.1",
-        "gulp-postcss": "6.1.1",
-        "gulp-sourcemaps": "1.6.0",
-        "gulp-util": "3.0.7",
-        "gulp-watch": "4.3.8",
-        "gulp-zip": "4.0.0",
-        "postcss-color-function": "2.0.1",
-        "postcss-custom-properties": "5.0.1",
-        "postcss-easy-import": "1.0.1"
-    },
-    "config": {
-        "posts_per_page": 25
-    }
+  "name": "gulma",
+  "description": "Bulma theme for the Ghost blogging platform. Beautiful, minimal and responsive.",
+  "demo": "https://github.com/simply-fiete/Gulma",
+  "version": "1.0.0",
+  "engines": {
+    "ghost": ">=2.0.0"
+  },
+  "license": "MIT",
+  "screenshots": {},
+  "scripts": {
+    "dev": "gulp",
+    "zip": "gulp zip",
+    "test": "gscan ."
+  },
+  "author": {
+    "name": "Stefan Fiedler",
+    "email": "todo@test.tld",
+    "url": "https://github.com/simply-fiete"
+  },
+  "gpm": {
+    "type": "theme",
+    "categories": [
+      "Minimal",
+      "Magazine",
+      "Blog",
+      "Bulma",
+      "CSS",
+      "Framework"
+    ]
+  },
+  "keywords": [
+    "ghost",
+    "theme",
+    "ghost-theme",
+    "bulma"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simply-fiete/Gulma.git"
+  },
+  "bugs": "https://github.com/simply-fiete/Gulma/issues",
+  "contributors": [
+    "https://github.com/simply-fiete/Gulma/graphs/contributors"
+  ],
+  "devDependencies": {
+    "gscan": "^2.2.1",
+    "gulp": "3.9.1",
+    "gulp-livereload": "3.8.1",
+    "gulp-util": "3.0.7",
+    "gulp-watch": "4.3.8",
+    "gulp-zip": "4.0.0",
+    "gulp-sass": "^4.0.1",
+    "browser-sync": "^2.24.7"
+  },
+  "config": {
+    "posts_per_page": 25
+  },
+  "dependencies": {
+    "bulma": "^0.7.1"
+  }
 }
