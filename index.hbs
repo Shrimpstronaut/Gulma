@@ -30,13 +30,17 @@ into the {body} of the default.hbs template --}}
 </section>
 
 {{!-- The main content area --}}
-<section class="container">
-    <div class="post-feed columns is-multiline">
-        {{#foreach posts}}
-            <!--<div class="column is-half-desktop">-->
-                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                {{> "post-card"}}
-            <!--</div>-->
-        {{/foreach}}
+<main class="container site-main-outer">
+    <div class="inner">
+        <div class="post-feed">
+            <div class="columns is-multiline">
+                {{#foreach posts}}
+                    <!--<div class="column is-half-desktop">-->
+                    {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                    {{> "post-card"}}
+                    <!--</div>-->
+                {{/foreach}}
+            </div>
+        </div>
     </div>
-</section>
+</main>
