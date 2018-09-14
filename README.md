@@ -4,6 +4,28 @@ A custom theme for [Ghost](http://github.com/tryghost/ghost/) based on the popul
 
 ![](screenshot_desktop.png)
 
+# Demo
+Head over to the [Gulma demo page](https://simply-fiete.github.io/gulma-demo/) and see this theme in action.
+
+# Project status
+Templates:
+
+- [x] index / landing page
+- [ ] post.hbs
+- [ ] page.hbs
+- [ ] error.hbs & error-404.hbs
+- [ ] author.hbs
+- [ ] tag.hbs
+
+Partials:
+
+- [x] site-nav.hbs
+- [x] post-card.hbs
+- [x] navigation.hbs
+- [ ] byline-single.hbs
+- [ ] byline-multiple.hbs
+- [ ] floating-header.hbs
+
 # Development
 
 Styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need Node and Gulp installed globally. After that, from the theme's root directory:
@@ -20,9 +42,3 @@ The `zip` Gulp task packages the theme files into `dist/<theme-name>.zip`, which
 ```bash
 $ yarn zip
 ```
-
-# PostCSS Features Used
-
-- Autoprefixer - Don't worry about writing browser prefixes of any kind, it's all done automatically with support for the latest 2 major versions of every browser.
-- Variables - Simple pure CSS variables
-- [Color Function](https://github.com/postcss/postcss-color-function)
