@@ -3,6 +3,9 @@
 @import "../../node_modules/bulma/bulma.sass"
 @import "../../node_modules/bulma/sass/utilities/_all.sass"
 
+/* -------- 1. Navbar -------- */
+
+// add margin to icons inside the navbar
 .navbar-item .icon
   margin-right: 5px
   margin-top: 5px
@@ -11,8 +14,7 @@
 a.navbar-burger
   color: #fff
 
-section.hero
-  margin-bottom: 20px
+/* -------- 2. Post -------- */
 
 .image-tag
   margin-left: 12px
@@ -22,13 +24,6 @@ section.hero
   position: absolute
   top: 12px
   left: 12px
-
-.column.first
-  flex: none
-  width: 100%
-
-.side-main-outer
-  position: relative
 
 @media screen and (min-width: $tablet)
   .post-feed
@@ -41,11 +36,6 @@ section.hero
   background: #c5d2d9 none no-repeat 50% 50%
   background-size: cover
 
-@media screen and (max-width: $desktop)
-  .container
-    max-width: $tablet
-    width: $tablet
-
 .card-content-link
   color: #15171a
 
@@ -55,7 +45,19 @@ section.hero
 .card.post:hover
   box-shadow: 8px 28px 50px rgba(39, 44, 49, 0.15), 1px 6px 12px rgba(39, 44, 49, 0.23)
   transition: all .8s ease
-  transform: translate3D(0,-1px,0) scale(1.02)
+  transform: translate3D(0, -1px, 0) scale(1.02)
 
+/* -------- 3. Layout -------- */
+
+.side-main-outer
+  position: relative
+
+@media screen and (max-width: $desktop)
+  .inner
+    padding-left: 10px
+    padding-right: 10px
+
+/* -------- 4. Footer -------- */
 .footer
   margin-top: 20px
+

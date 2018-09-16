@@ -6588,6 +6588,7 @@ label.panel-block {
   .pagination-ellipsis[disabled] {
     cursor: not-allowed; }
 
+/* -------- 1. Navbar -------- */
 .navbar-item .icon {
   margin-right: 5px;
   margin-top: 5px; }
@@ -6595,9 +6596,7 @@ label.panel-block {
 a.navbar-burger {
   color: #fff; }
 
-section.hero {
-  margin-bottom: 20px; }
-
+/* -------- 2. Post -------- */
 .image-tag {
   margin-left: 12px;
   margin-top: 12px; }
@@ -6606,13 +6605,6 @@ section.hero {
   position: absolute;
   top: 12px;
   left: 12px; }
-
-.column.first {
-  flex: none;
-  width: 100%; }
-
-.side-main-outer {
-  position: relative; }
 
 @media screen and (min-width: 769px) {
   .post-feed {
@@ -6625,11 +6617,6 @@ section.hero {
   background: #c5d2d9 none no-repeat 50% 50%;
   background-size: cover; }
 
-@media screen and (max-width: 1088px) {
-  .container {
-    max-width: 769px;
-    width: 769px; } }
-
 .card-content-link {
   color: #15171a; }
 
@@ -6641,5 +6628,15 @@ section.hero {
   transition: all .8s ease;
   transform: translate3D(0, -1px, 0) scale(1.02); }
 
+/* -------- 3. Layout -------- */
+.side-main-outer {
+  position: relative; }
+
+@media screen and (max-width: 1088px) {
+  .inner {
+    padding-left: 10px;
+    padding-right: 10px; } }
+
+/* -------- 4. Footer -------- */
 .footer {
   margin-top: 20px; }
